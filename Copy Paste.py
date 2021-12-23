@@ -9,7 +9,7 @@ sg.theme('DarkTeal9')
 
 #EXCEL_FILE = 'User Data.xlsx'
 #PATH ="C:\\Users\Suyog Gaire\Desktop\User Details\User Data.xlsx"
-df=pd.read_excel(r"C:\\Users\Suyog Gaire\Desktop\User Details\User Data.xlsx")
+df=pd.read_excel("User Data.xlsx")
 
 sg.popup('Please Enter the following details to know about the weather condition of your locality')
 layout = [
@@ -33,8 +33,9 @@ while True:
     if event == sg.WIN_CLOSED or event == 'Exit':
         break 
     if event == 'Submit':
+        
        df=df.append(values,ignore_index=True)
-       df.to_excel(r'C:\\Users\Suyog Gaire\Desktop\User Details\User Data.xlsx',index=False)
+       df.to_excel('User Data.xlsx',index=False)
        window.close()
        
     
